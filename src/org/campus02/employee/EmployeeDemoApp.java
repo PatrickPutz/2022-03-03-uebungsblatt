@@ -1,20 +1,20 @@
 package org.campus02.employee;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class EmployeeDemoApp {
 
     public static void main(String[] args) {
 
-        Employee karl = new Employee("Corona", "Karl", "IT", 2500.00);
+        Employee karl = new Employee("Corona", "Zabusa", "IT", 2500.00);
         Employee max = new Employee("Mustermann", "Max", "Finance", 3000.00);
         Employee susi = new Employee("Sorglos", "Susi", "HR", 2800.00);
 
         FixCommissionEmployee klaus = new FixCommissionEmployee("Corona", "Klaus", "HR", 3000.00, 500.00);
         FixCommissionEmployee maria = new FixCommissionEmployee("Mustermann", "Maria", "IT", 2700.00, 800.00);
 
-        PercentCommissionEmployee rene = new PercentCommissionEmployee("Russ", "Rene", "Finance", 3000.00, 10.00);
+        PercentCommissionEmployee rene = new PercentCommissionEmployee("Mustermann", "Rene", "Finance", 3000.00, 10.00);
         PercentCommissionEmployee werner = new PercentCommissionEmployee("Wohlauf", "Werner", "IT", 3000.00, 20.00);
 
         EmployeeManager employees = new EmployeeManager();
@@ -47,6 +47,26 @@ public class EmployeeDemoApp {
             System.out.println(stringDoubleEntry);
         }
         System.out.println("");
+        System.out.println("");
+
+        System.out.println("<<< Sorting >>>");
+
+        Employee[] employeeArray = {susi, karl, max, klaus, maria, rene, werner};
+        System.out.println("Array.toString(employeeArray) = " + Arrays.toString(employeeArray));
+
+        Arrays.sort(employeeArray);
+        System.out.println("Array.toString(employeeArray) = " + Arrays.toString(employeeArray));
+
+        ArrayList<Employee> ee = new ArrayList<>();
+        ee.add(susi);
+        ee.add(karl);
+        ee.add(max);
+        ee.add(klaus);
+        ee.add(maria);
+
+        System.out.println("ee = " + ee);
+        Collections.sort(ee);
+        System.out.println("ee = " + ee);
     }
 
 }

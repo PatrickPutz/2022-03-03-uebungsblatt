@@ -1,6 +1,7 @@
 package org.campus02.employee;
 
-public class Employee {
+public class Employee implements Comparable<Employee> // Comparable -> Default Sortierung
+{
 
     protected String lastname;
     protected String firstname;
@@ -20,5 +21,38 @@ public class Employee {
 
     public String getDepartment() {
         return department;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "lastname='" + lastname + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", department='" + department + '\'' +
+                ", baseSalary=" + baseSalary +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        // -1 -> kleiner
+        // 0 -> ident
+        // +1 -> größer
+
+        /*
+        if(getFullSalary() > o.getFullSalary())
+            return 1;
+        if(getFullSalary() < o.getFullSalary())
+            return -1;
+
+        return 0;
+         */
+
+        if(lastname.compareTo(o.lastname) == 0){
+            return firstname.compareTo(o.firstname);
+        }
+        else
+            return lastname.compareTo(o.lastname);
+
     }
 }
