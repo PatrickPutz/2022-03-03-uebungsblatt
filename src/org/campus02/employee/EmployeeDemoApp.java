@@ -67,6 +67,9 @@ public class EmployeeDemoApp {
         System.out.println("ee = " + ee);
         Collections.sort(ee);
         System.out.println("ee = " + ee);
+
+        Collections.sort(ee, new EmployeeFirstNameSort());
+        System.out.println("ee = " + ee);
     }
 
 }

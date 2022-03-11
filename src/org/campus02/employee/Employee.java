@@ -15,6 +15,18 @@ public class Employee implements Comparable<Employee> // Comparable -> Default S
         this.baseSalary = baseSalary;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
     public double getFullSalary(){
         return this.baseSalary;
     }
